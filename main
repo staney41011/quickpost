@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發文助手</title>
+</head>
+<body>
+    <h2>點擊按鈕複製內容，然後開啟 Facebook 發文</h2>
+    <textarea id="postContent">這是我的預填內容！</textarea>
+    <button onclick="copyText()">複製內容並前往 Facebook</button>
+
+    <script>
+        function copyText() {
+            let textArea = document.getElementById("postContent");
+            textArea.select();
+            document.execCommand("copy");
+            alert("內容已複製，請到 Facebook 貼上！");
+
+            // 重新導向到 Facebook
+            window.location.href = "https://www.facebook.com/";
+        }
+    </script>
+</body>
+</html>
