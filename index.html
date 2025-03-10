@@ -20,7 +20,10 @@
             textArea.select();
             document.execCommand("copy");
 
-            // 嘗試開啟 Facebook APP
+            // 顯示提示訊息
+            alert("內容已複製，將開啟 Facebook 發文畫面！");
+
+            // 嘗試開啟 Facebook APP（深層連結）
             let fbAppUrl = "fb://facewebmodal/f?href=https://www.facebook.com/share_channel/";
             let fbWebUrl = "https://www.facebook.com/share_channel/";
 
