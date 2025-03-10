@@ -17,7 +17,7 @@
         function copyAndOpenFacebook() {
             // 取得 textarea 元素
             let textArea = document.getElementById("postContent");
-            
+
             // 選取內容並複製
             textArea.select();
             document.execCommand("copy");
@@ -25,8 +25,13 @@
             // 顯示提示訊息
             alert("內容已複製，請到 Facebook 貼上！");
 
-            // 嘗試跳轉到 Facebook 發文畫面
-            window.location.href = "https://www.facebook.com/share_channel/";
+            // 嘗試在新視窗打開 Facebook 發文頁面
+            let fbWindow = window.open("https://www.facebook.com/share_channel/", "_blank");
+
+            // 如果瀏覽器阻擋彈出視窗，則顯示手動跳轉提示
+            if (!fbWindow) {
+                alert("請手動開啟 Facebook 發文頁面：https://www.facebook.com/share_channel/");
+            }
         }
     </script>
 </body>
