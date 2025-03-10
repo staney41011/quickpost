@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>發文助手</title>
+    <title>Facebook 發文助手</title>
 </head>
 <body>
-    <h2>點擊按鈕複製內容，然後開啟 Facebook 發文</h2>
-    <textarea id="postContent">這是我的預填內容！</textarea>
-    <button onclick="copyText()">複製內容並前往 Facebook</button>
+    <h2>點擊按鈕複製內容，並開啟 Facebook 發文</h2>
+    
+    <!-- 預設的發文內容 -->
+    <textarea id="postContent" style="width:100%; height:100px;">這是我的預填內容！</textarea>
+    
+    <button onclick="copyAndOpenFacebook()">📋 複製並前往 Facebook 發文</button>
 
     <script>
-        function copyText() {
+        function copyAndOpenFacebook() {
+            // 取得 textarea 元素
             let textArea = document.getElementById("postContent");
+            
+            // 選取內容並複製
             textArea.select();
             document.execCommand("copy");
+
+            // 顯示提示訊息
             alert("內容已複製，請到 Facebook 貼上！");
 
-            // 重新導向到 Facebook
-            window.location.href = "https://www.facebook.com/";
+            // 嘗試跳轉到 Facebook 發文畫面
+            window.location.href = "https://www.facebook.com/dialog/share?app_id=87741124305&display=popup";
         }
     </script>
 </body>
