@@ -6,13 +6,15 @@
     <title>Facebook APP 發文助手</title>
 </head>
 <body>
-    <h2>自動完成 Facebook 發文操作</h2>
-
+    <h2>點擊按鈕複製內容，並開啟 Facebook APP 發文</h2>
+    
     <!-- 預設的發文內容 -->
     <textarea id="postContent" style="width:100%; height:100px;">這是我的預填內容！</textarea>
+    
+    <button onclick="copyAndOpenFacebook()">📋 複製並開啟 Facebook APP</button>
 
     <script>
-        window.onload = function() {
+        function copyAndOpenFacebook() {
             // 取得 textarea 元素
             let textArea = document.getElementById("postContent");
 
@@ -21,9 +23,9 @@
             document.execCommand("copy");
 
             // 顯示提示訊息
-            alert("內容已複製，將開啟 Facebook 發文畫面！");
+            alert("內容已複製，請到 Facebook 貼上！");
 
-            // 嘗試開啟 Facebook APP（深層連結）
+            // 嘗試打開 Facebook APP（若無 APP，則開啟網頁）
             let fbAppUrl = "fb://facewebmodal/f?href=https://www.facebook.com/share_channel/";
             let fbWebUrl = "https://www.facebook.com/share_channel/";
 
